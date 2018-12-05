@@ -32,12 +32,19 @@ namespace HelloWorld
             if (string.IsNullOrWhiteSpace(tbUsername.Text))
             {
                 MessageBox.Show("Username is required!",
-                "Validation error...",
-                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    "Validation error...",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbGDPR.Checked == false)
+            {
+                MessageBox.Show("You must agree with GDPR!",
+                    "Validation error...",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                lblMessage.Text = $"$> Hello, { tbUsername.Text }!";
+                var salutation = rbMale.Checked ? "Mr." : "Ms.";
+                lblMessage.Text = $"$> Hello, {salutation} { tbUsername.Text }!";
             }
         }
 
@@ -62,7 +69,7 @@ namespace HelloWorld
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
             CustomDialog dialog = new CustomDialog();
 
             dialog.Show();
@@ -74,6 +81,16 @@ namespace HelloWorld
 
             if (dialog.ShowDialog() == DialogResult.Ignore)
                 MessageBox.Show("It was ignored!");
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

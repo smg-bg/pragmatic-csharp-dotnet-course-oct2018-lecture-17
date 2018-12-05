@@ -36,6 +36,11 @@
             this.btnFormatDisk = new System.Windows.Forms.Button();
             this.btnShowForm = new System.Windows.Forms.Button();
             this.btnShowModalForm = new System.Windows.Forms.Button();
+            this.cbGDPR = new System.Windows.Forms.CheckBox();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.gbSex = new System.Windows.Forms.GroupBox();
+            this.gbSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -58,7 +63,7 @@
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(27, 177);
+            this.lblMessage.Location = new System.Drawing.Point(22, 204);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(79, 55);
             this.lblMessage.TabIndex = 2;
@@ -82,7 +87,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(145, 45);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -119,11 +124,59 @@
             this.btnShowModalForm.UseVisualStyleBackColor = true;
             this.btnShowModalForm.Click += new System.EventHandler(this.btnShowModalForm_Click);
             // 
+            // cbGDPR
+            // 
+            this.cbGDPR.AutoSize = true;
+            this.cbGDPR.Location = new System.Drawing.Point(27, 111);
+            this.cbGDPR.Name = "cbGDPR";
+            this.cbGDPR.Size = new System.Drawing.Size(349, 29);
+            this.cbGDPR.TabIndex = 8;
+            this.cbGDPR.Text = "I\'ve read and I agree with GDPR";
+            this.cbGDPR.UseVisualStyleBackColor = true;
+            this.cbGDPR.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
+            this.rbMale.Location = new System.Drawing.Point(23, 34);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(90, 29);
+            this.rbMale.TabIndex = 9;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(23, 85);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(114, 29);
+            this.rbFemale.TabIndex = 10;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
+            // gbSex
+            // 
+            this.gbSex.Controls.Add(this.rbMale);
+            this.gbSex.Controls.Add(this.rbFemale);
+            this.gbSex.Location = new System.Drawing.Point(878, 162);
+            this.gbSex.Name = "gbSex";
+            this.gbSex.Size = new System.Drawing.Size(184, 126);
+            this.gbSex.TabIndex = 11;
+            this.gbSex.TabStop = false;
+            this.gbSex.Text = "Sex";
+            this.gbSex.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 411);
+            this.Controls.Add(this.gbSex);
+            this.Controls.Add(this.cbGDPR);
             this.Controls.Add(this.btnShowModalForm);
             this.Controls.Add(this.btnShowForm);
             this.Controls.Add(this.btnFormatDisk);
@@ -136,6 +189,8 @@
             this.Text = "Hello World Playground";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Click += new System.EventHandler(this.MainWindow_Click);
+            this.gbSex.ResumeLayout(false);
+            this.gbSex.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +206,10 @@
         private System.Windows.Forms.Button btnFormatDisk;
         private System.Windows.Forms.Button btnShowForm;
         private System.Windows.Forms.Button btnShowModalForm;
+        private System.Windows.Forms.CheckBox cbGDPR;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.GroupBox gbSex;
     }
 }
 
